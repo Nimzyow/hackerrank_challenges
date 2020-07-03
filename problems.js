@@ -11,4 +11,10 @@ const compareTriplets = (a, b) => {
   return [aScore, bScore];
 };
 
-module.exports = compareTriplets;
+const aVeryBigSum = (arr) => {
+  let totalNum = 0;
+  arr.map((num) => (totalNum = totalNum + num));
+  return totalNum;
+};
+
+module.exports = { compareTriplets, aVeryBigSum };
