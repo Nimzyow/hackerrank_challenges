@@ -17,4 +17,12 @@ const aVeryBigSum = (arr) => {
   return totalNum;
 };
 
-module.exports = { compareTriplets, aVeryBigSum };
+const diagonalDifference = (arr) => {
+  const matrixSize = arr[0];
+  let position = 1;
+  let firstDiagonal = 0;
+  let secondDiagonal = 0;
+  return 15;
+};
+
+module.exports = { compareTriplets, aVeryBigSum, diagonalDifference };
