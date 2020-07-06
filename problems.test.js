@@ -2,6 +2,7 @@ const {
   compareTriplets,
   aVeryBigSum,
   diagonalDifference,
+  staircase,
 } = require("./problems");
 
 describe("compare triplets", () => {
@@ -54,5 +55,22 @@ describe("Diagonal difference", () => {
       [4, 5],
     ]);
     expect(result).toEqual(5);
+  });
+});
+describe("staircase", () => {
+  it("should log #", () => {
+    console.log = jest.fn();
+    const result = staircase(1);
+    expect(console.log).toHaveBeenCalledWith("#");
+  });
+  it("should log # and ## on a new line", () => {
+    console.log = jest.fn();
+    const result = staircase(2);
+    expect(console.log).toHaveBeenCalledWith(" #\n##");
+  });
+  it("should log # and ## and ###, each on a new line", () => {
+    console.log = jest.fn();
+    const result = staircase(3);
+    expect(console.log).toHaveBeenCalledWith("  #\n ##\n###");
   });
 });
