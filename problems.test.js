@@ -81,4 +81,9 @@ describe("mini-max sum", () => {
     const result = miniMax([1, 2, 3, 4, 5]);
     expect(console.log).toHaveBeenCalledWith("10 14");
   });
+  it("should log '16 24' if passed an array of 1,3,5,7,9", () => {
+    console.log = jest.fn();
+    const result = miniMax([1, 3, 5, 7, 9]);
+    expect(console.log).toHaveBeenCalledWith("16 24");
+  });
 });

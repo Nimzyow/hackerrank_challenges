@@ -78,7 +78,16 @@ const staircase = (n) => {
 };
 
 const miniMax = (arr) => {
-  console.log("10 14");
+  const removeFirstItem = arr.slice(1);
+  const removeLastItem = arr.slice(0, arr.length - 1);
+
+  const removeFirstItemSum = removeFirstItem.reduce((total, num) => {
+    return total + num;
+  });
+  const removeLastItemSum = removeLastItem.reduce((total, num) => {
+    return total + num;
+  });
+  console.log(`${removeLastItemSum} ${removeFirstItemSum}`);
 };
 
 module.exports = {
