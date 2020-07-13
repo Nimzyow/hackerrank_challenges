@@ -78,15 +78,18 @@ const staircase = (n) => {
 };
 
 const miniMax = (arr) => {
-  const removeFirstItem = arr.slice(1);
-  const removeLastItem = arr.slice(0, arr.length - 1);
+  let sortedArr = arr.sort();
+  const removeFirstItem = sortedArr.slice(1);
+  const removeLastItem = sortedArr.slice(0, sortedArr.length - 1);
 
-  const removeFirstItemSum = removeFirstItem.reduce((total, num) => {
-    return total + num;
-  });
-  const removeLastItemSum = removeLastItem.reduce((total, num) => {
-    return total + num;
-  });
+  const reducer = (arr) => {
+    return arr.reduce((total, num) => {
+      return total + num;
+    });
+  };
+
+  const removeFirstItemSum = reducer(removeFirstItem);
+  const removeLastItemSum = reducer(removeLastItem);
   console.log(`${removeLastItemSum} ${removeFirstItemSum}`);
 };
 
