@@ -77,9 +77,14 @@ const staircase = (n) => {
   }
 };
 
+const miniMax = (arr) => {
+  console.log("10 14");
+};
+
 module.exports = {
   compareTriplets,
   aVeryBigSum,
   diagonalDifference,
   staircase,
+  miniMax,
 };

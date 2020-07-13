@@ -3,6 +3,7 @@ const {
   aVeryBigSum,
   diagonalDifference,
   staircase,
+  miniMax,
 } = require("./problems");
 
 describe("compare triplets", () => {
@@ -72,5 +73,12 @@ describe("staircase", () => {
     console.log = jest.fn();
     const result = staircase(3);
     expect(console.log).toHaveBeenCalledWith("  #\n ##\n###");
+  });
+});
+describe("mini-max sum", () => {
+  it("should log '10 14' if passed an array of 1,2,3,4,5", () => {
+    console.log = jest.fn();
+    const result = miniMax([1, 2, 3, 4, 5]);
+    expect(console.log).toHaveBeenCalledWith("10 14");
   });
 });
