@@ -4,6 +4,8 @@ const {
   diagonalDifference,
   staircase,
   miniMax,
+  extraLongFactorial,
+  reverseNum,
 } = require("./problems");
 
 describe("compare triplets", () => {
@@ -91,5 +93,40 @@ describe("mini-max sum", () => {
   it("should log '299 9271' if passed an array of 7, 69, 2, 221, 8974", () => {
     miniMax([7, 69, 2, 221, 8974]);
     expect(console.log).toHaveBeenCalledWith("299 9271");
+  });
+  describe("extra long factorials", () => {
+    it("should return 3,628,800 if passed in 10", () => {
+      console.log = jest.fn();
+      extraLongFactorial(10);
+      expect(console.log).toHaveBeenCalledWith("3628800");
+    });
+    it("should return 15511210043330985984000000 if passed in 25", () => {
+      console.log = jest.fn();
+      extraLongFactorial(25);
+      expect(console.log).toHaveBeenCalledWith("15511210043330985984000000");
+    });
+    it("should return 119622220865480194561963161495657715064383733760000000000 if passed in 45", () => {
+      console.log = jest.fn();
+      extraLongFactorial(45);
+      expect(console.log).toHaveBeenCalledWith(
+        "119622220865480194561963161495657715064383733760000000000",
+      );
+    });
+  });
+  describe("reverseNum", () => {
+    it("should correctly reverse 123", () => {
+      expect(reverseNum(123)).toEqual(321);
+    });
+
+    it("should correctly reverse 456", () => {
+      expect(reverseNum(456)).toEqual(654);
+    });
+
+    it("should return 0", () => {
+      expect(reverseNum(0)).toEqual(0);
+    });
+    it("should correctly reverse -123", () => {
+      expect(reverseNum(-123)).toEqual(-321);
+    });
   });
 });

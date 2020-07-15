@@ -93,10 +93,42 @@ const miniMax = (arr) => {
   console.log(`${removeLastItemSum} ${removeFirstItemSum}`);
 };
 
+const extraLongFactorial = (n) => {
+  let memoization = [BigInt(0), BigInt(1)];
+
+  const factorial = (num) =>
+    typeof memoization[num] !== "number"
+      ? num - BigInt(1) > 0
+        ? num * factorial(num - BigInt(1))
+        : BigInt(1)
+      : memoization[num];
+
+  console.log(String(factorial(BigInt(n))));
+};
+
+const reverseAndJoin = (arr) => {
+  arr.reverse();
+  return arr.join("");
+};
+
+const reverseNum = (n) => {
+  const nToString = String(n);
+  const stringToArray = nToString.split("");
+  if (!nToString.includes("-")) {
+    const stringJoined = reverseAndJoin(stringToArray);
+    return Number(stringJoined);
+  }
+  stringToArray.shift();
+  const stringJoined = reverseAndJoin(stringToArray);
+  return Number(stringJoined) * -1;
+};
+
 module.exports = {
   compareTriplets,
   aVeryBigSum,
   diagonalDifference,
   staircase,
   miniMax,
+  extraLongFactorial,
+  reverseNum,
 };
