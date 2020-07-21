@@ -123,6 +123,11 @@ const reverseNum = (n) => {
   return Number(stringJoined) * -1;
 };
 
+const birthdayCakeCandles = (ar) => {
+  let max = Math.max(...ar);
+  return ar.filter((n) => n === max).length;
+};
+
 module.exports = {
   compareTriplets,
   aVeryBigSum,
@@ -131,4 +136,5 @@ module.exports = {
   miniMax,
   extraLongFactorial,
   reverseNum,
+  birthdayCakeCandles,
 };
