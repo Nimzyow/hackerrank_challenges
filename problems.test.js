@@ -7,6 +7,7 @@ const {
   extraLongFactorial,
   reverseNum,
   birthdayCakeCandles,
+  timeConversion,
 } = require("./problems");
 
 describe("compare triplets", () => {
@@ -143,5 +144,23 @@ describe("Birthday cake candles", () => {
   });
   it("should return 2 when passing in array of 4, 2, 1, 3", () => {
     expect(birthdayCakeCandles([4, 2, 1, 3])).toEqual(1);
+  });
+});
+
+describe("Time conversion", () => {
+  it("should return 19:05:45 when passing in 07:05:45PM", () => {
+    expect(timeConversion("07:05:45PM")).toEqual("19:05:45");
+  });
+  it("should return 21:06:40 when passing in 09:06:40PM", () => {
+    expect(timeConversion("09:06:40PM")).toEqual("21:06:40");
+  });
+  it("should return 11:06:40 when passing in 11:06:40PM", () => {
+    expect(timeConversion("11:06:40AM")).toEqual("11:06:40");
+  });
+  it("should return 00:00:00 when passing in 12:00:00AM", () => {
+    expect(timeConversion("12:00:00AM")).toEqual("00:00:00");
+  });
+  it("should return 12:00:00 when passing in 12:00:00PM", () => {
+    expect(timeConversion("12:00:00PM")).toEqual("12:00:00");
   });
 });
