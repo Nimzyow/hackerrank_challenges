@@ -1,49 +1,3 @@
-const staircase = (n) => {
-  let arr = [];
-  let hash = n;
-  if (n === 1) {
-    console.log("#");
-  } else {
-    for (let i = 0; i < n; i++) {
-      arr.push([]);
-    }
-
-    for (let i = 0; i < arr.length; i++) {
-      for (let i = 0; i < hash; i++) {
-        arr[i].push("#");
-      }
-      hash--;
-    }
-    arr.reverse().map((el) => {
-      let numberOfSpaces = n - el.length;
-
-      if (numberOfSpaces !== 0) {
-        for (let i = 0; i < numberOfSpaces; i++) {
-          el.push(" ");
-        }
-      }
-    });
-
-    console.log(arr.map((el) => el.reverse().join("")).join("\n"));
-  }
-};
-
-const miniMax = (arr) => {
-  let sortedArr = arr.sort();
-  const removeFirstItem = sortedArr.slice(1);
-  const removeLastItem = sortedArr.slice(0, sortedArr.length - 1);
-
-  const reducer = (arr) => {
-    return arr.reduce((total, num) => {
-      return total + num;
-    });
-  };
-
-  const removeFirstItemSum = reducer(removeFirstItem);
-  const removeLastItemSum = reducer(removeLastItem);
-  console.log(`${removeLastItemSum} ${removeFirstItemSum}`);
-};
-
 const extraLongFactorial = (n) => {
   let memoization = [BigInt(0), BigInt(1)];
 
@@ -109,8 +63,6 @@ const timeConversion = (time) => {
 };
 
 module.exports = {
-  staircase,
-  miniMax,
   extraLongFactorial,
   reverseNum,
   birthdayCakeCandles,
