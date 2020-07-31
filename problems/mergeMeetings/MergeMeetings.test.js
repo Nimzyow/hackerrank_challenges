@@ -41,4 +41,11 @@ describe("mergeMeetings", () => {
     ]);
     expect(result).toEqual([{ startTime: 1, endTime: 7 }]);
   });
+  it.only("should merge meetings when first meeting is from 5 - 7 and second meeting is from 1 - 5", () => {
+    const result = mergeMeetings([
+      { startTime: 5, endTime: 7 },
+      { startTime: 1, endTime: 5 },
+    ]);
+    expect(result).toEqual([{ startTime: 1, endTime: 7 }]);
+  });
 });
