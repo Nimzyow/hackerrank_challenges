@@ -1,13 +1,24 @@
 module.exports = (flightTime, filmTimes) => {
-  let filmTimesIndex = 1;
-  const timeLeft = flightTime - filmTimes[0];
+  let filmTimesIndex = 0;
+  let filmToCompareTo = 0;
 
-  while (filmTimesIndex < filmTimes.length) {
-    const filmFinishableInFlightTime = timeLeft - filmTimes[filmTimesIndex];
-    if (filmFinishableInFlightTime === 0) {
+  while (
+    filmTimesIndex < filmTimes.length &&
+    filmToCompareTo < filmTimes.length
+  ) {
+    let timeLeft = flightTime - filmTimes[filmToCompareTo];
+    const filmFinishableInFlightTime = timeLeft - filmTimes[filmToCompareTo];
+    if (filmToCompareTo === filmTimesIndex) {
+      filmTimesIndex++;
+    } else if (filmFinishableInFlightTime === 0) {
       return true;
+    } else {
+      filmTimesIndex++;
     }
-    filmTimesIndex++;
+    if (filmTimesIndex === filmTimes.length) {
+      filmToCompareTo++;
+      filmTimesIndex = 0;
+    }
   }
   return false;
 };
