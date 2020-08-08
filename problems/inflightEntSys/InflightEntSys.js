@@ -7,7 +7,7 @@ module.exports = (flightTime, filmTimes) => {
     filmToCompareTo < filmTimes.length
   ) {
     let timeLeft = flightTime - filmTimes[filmToCompareTo];
-    const filmFinishableInFlightTime = timeLeft - filmTimes[filmToCompareTo];
+    const filmFinishableInFlightTime = timeLeft - filmTimes[filmTimesIndex];
     if (filmToCompareTo === filmTimesIndex) {
       filmTimesIndex++;
     } else if (filmFinishableInFlightTime === 0) {
