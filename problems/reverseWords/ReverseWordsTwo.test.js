@@ -15,7 +15,7 @@ describe("ReverseWordsTwo", () => {
       "l",
       "o",
     ]);
-    expect(result).toBe([
+    expect(result).toEqual([
       "h",
       "e",
       "l",
@@ -27,6 +27,42 @@ describe("ReverseWordsTwo", () => {
       "r",
       "l",
       "d",
+    ]);
+  });
+  it("return an array of welcome to hell", () => {
+    const result = ReverseWordsTwo([
+      "h",
+      "e",
+      "l",
+      "l",
+      " ",
+      "t ",
+      "o",
+      " ",
+      "w",
+      "e",
+      "l",
+      "c",
+      "o",
+      "m",
+      "e",
+    ]);
+    expect(result).toEqual([
+      "w",
+      "e",
+      "l",
+      "c",
+      "o",
+      "m",
+      "e",
+      " ",
+      "t ",
+      "o",
+      " ",
+      "h",
+      "e",
+      "l",
+      "l",
     ]);
   });
 });
