@@ -3,10 +3,10 @@ module.exports = (data) => {
     dataSplit.sort()
     const menuData = [{
         title: dataSplit[0][0],
-        data: []
+        data: [dataSplit[0][1]]
     }]
 
-    for (let i = 0; i < dataSplit.length; i++) {
+    for (let i = 1; i < dataSplit.length; i++) {
         const lastMenuData = menuData[menuData.length - 1]
         const currentMenuData = dataSplit[i]
         if (lastMenuData.title === currentMenuData[0] && currentMenuData.length === 2) {
