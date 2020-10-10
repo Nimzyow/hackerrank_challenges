@@ -1,6 +1,6 @@
 const MenuDataGenerator = require("./MenuDataGeneratorTwo");
 describe("menu data generator", () => {
-    it.skip("creates correct data structure", () => {
+    it("creates correct data structure", () => {
         const data = ["parent1/parent1child"];
         const expectedResult = [
             {
